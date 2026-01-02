@@ -1,0 +1,230 @@
+/* ============================================
+   Home Page Styles
+   ============================================ */
+
+/* Section Badge */
+.section-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(252, 211, 77, 0.1));
+    color: var(--color-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(13, 148, 136, 0.2);
+}
+
+/* Highlights Section */
+.home__highlights {
+    background: var(--color-bg-light);
+}
+
+.highlights__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.highlight-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.highlight-card__image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.highlight-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.highlight-card:hover .highlight-card__image img {
+    transform: scale(1.1);
+}
+
+.highlight-card__icon {
+    position: absolute;
+    bottom: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--color-secondary), #0f766e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+    box-shadow: var(--shadow-lg);
+    z-index: 1;
+}
+
+.highlight-card__content {
+    padding: 2rem 1.5rem 1.5rem;
+    text-align: center;
+}
+
+.highlight-card__content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.highlight-card__content p {
+    font-size: 0.9rem;
+    margin: 0 auto;
+}
+
+/* About Preview Section */
+.home__about {
+    background: white;
+}
+
+.about-preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-preview__content h2 {
+    margin-bottom: 1.5rem;
+}
+
+.about-preview__content p {
+    margin-bottom: 1rem;
+}
+
+.about-preview__content .btn {
+    margin-top: 1rem;
+}
+
+.about-preview__img-wrapper {
+    position: relative;
+}
+
+.about-preview__img-wrapper img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+}
+
+.about-preview__badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+}
+
+.about-preview__badge-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+}
+
+.about-preview__badge-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    opacity: 0.8;
+}
+
+/* CTA Section */
+.home__cta {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--color-primary), #1e3a5f);
+}
+
+.cta-box {
+    text-align: center;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-box h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.cta-box p {
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 500px;
+    margin: 0 auto 2rem;
+}
+
+.cta-box__actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-box .btn-secondary {
+    border-color: white;
+    color: white;
+}
+
+.cta-box .btn-secondary:hover {
+    background: white;
+    color: var(--color-primary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .highlights__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-preview {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .about-preview__content {
+        order: 2;
+        text-align: center;
+    }
+
+    .about-preview__content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-preview__image {
+        order: 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .highlights__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-preview__img-wrapper img {
+        height: 300px;
+    }
+
+    .about-preview__badge {
+        right: 10px;
+        bottom: -15px;
+        padding: 1rem;
+    }
+}

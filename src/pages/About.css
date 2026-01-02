@@ -1,0 +1,168 @@
+/* ============================================
+   About Page Styles
+   ============================================ */
+
+/* Hero Banner */
+.about-hero {
+    position: relative;
+    height: 50vh;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.about-hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.8));
+}
+
+.about-hero__content {
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}
+
+.about-hero__content h1 {
+    color: white;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 0.5rem;
+}
+
+.about-hero__content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+}
+
+/* Story Section */
+.about-story {
+    background: white;
+}
+
+.about-story__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-story__content h2 {
+    margin-bottom: 1.5rem;
+}
+
+.about-story__content p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.about-story__image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Features */
+.about-features {
+    background: var(--color-bg-light);
+}
+
+.features__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-medium);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.feature-card__icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(13, 148, 136, 0.2));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+}
+
+.feature-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Map Section */
+.about-map {
+    background: white;
+}
+
+.map-container {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .about-story__grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .about-story__content {
+        text-align: center;
+    }
+
+    .about-story__content p {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .features__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .features__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-story__image img {
+        height: 280px;
+    }
+}
